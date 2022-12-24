@@ -1,0 +1,26 @@
+{
+  "productos": [
+    {
+      "nombre": "Alejandro",
+      "precio": "1232221",
+      "id": 1,
+      "undefined": "1232221"
+    },
+    {
+      "nombre": "Alefdsfdsf",
+      "precio": "12156",
+      "id": 2,
+      "undefined": "12156"
+    },
+    {
+      "nombre": "Alejandro",
+      "precio": 123,
+      "id": 4
+    },
+    {
+      "nombre": "1",
+      "precio": 2,
+      "id": 5
+    }
+  ]
+}
