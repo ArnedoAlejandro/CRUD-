@@ -10,6 +10,8 @@ const NuevoProducto = () => {
 
   const [ nombre, guardarNombre ] = useState("")
   const [ precio, guardarPrecio ] = useState("")
+  const [ cantidad, guardarCantidad] = useState("")
+  const [ total, guardarTotal ] = useState("")
 
   //Redireccionamiento
   const navigate = useNavigate()
@@ -30,7 +32,7 @@ const NuevoProducto = () => {
     e.preventDefault()
 
     //Validar Formulario
-    if(nombre.trim() === "" || precio <= 0){
+    if(nombre.trim() === "" || precio <= 0 ||  cantidad === ""){
 
       const alerta = {
         msg: "Ambos campos son obligatorios",
@@ -47,7 +49,9 @@ const NuevoProducto = () => {
     //Crear el nuevo producto
     agregarProducto({
       nombre,
-      precio
+      precio,
+      cantidad,
+      total: cantidad*precio
     })
     //Redireccion
     navigate("/")
@@ -80,7 +84,7 @@ const NuevoProducto = () => {
                 />
               </div>
               <div className="form-group">
-                <label>Nombre Producto</label>
+                <label>Precio Producto</label>
                 <input 
                   type="number"
                   className="form-control"
@@ -88,6 +92,17 @@ const NuevoProducto = () => {
                   name="precio"
                   value={precio}
                   onChange={ e =>guardarPrecio(Number(e.target.value))}
+                />
+              </div>
+              <div className="form-group">
+                <label>Cantidad</label>
+                <input 
+                  type="number"
+                  className="form-control"
+                  placeholder="Cantidad"  
+                  name="cantidad"
+                  value={cantidad}
+                  onChange={ e =>guardarCantidad(Number(e.target.value))}
                 />
               </div>
               <button  

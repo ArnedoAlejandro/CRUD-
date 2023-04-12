@@ -30,11 +30,13 @@ const Productos = () => {
         
       { cargando ? <p className="font-weight-bold text-center">Cargando...</p> : null }
 
-      <table className="table table-striped">
-        <thead className="bg-primary table-dark">
+      <table className=" justify-items-center table w-100 table-striped text-center">
+        <thead className="bg-primary justify-center table-dark ">
           <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio unitario</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Total</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>

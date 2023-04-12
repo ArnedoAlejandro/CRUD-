@@ -12,6 +12,7 @@ const EditarProducto = () => {
   const [ producto, guardarProducto ] = useState({
     nombre:"",
     precio: "",
+    cantidad:""
   })
 
   const productoEditar = useSelector(state => state.productos.productoEditar)
@@ -25,12 +26,13 @@ const EditarProducto = () => {
     guardarProducto({
       ...producto,
       [e.target.name] :e.target.value,
-      [e.target.precio]: e.target.value
+      [e.target.precio]: e.target.value,
+      [e.target.cantidad]: e.target.value
     })
   }
   
 
-  const { nombre, precio } = producto
+  const { nombre, precio, cantidad } = producto
 
   const submitEditarProducto = (e) =>{
     e.preventDefault();
@@ -68,6 +70,17 @@ const EditarProducto = () => {
                 placeholder="Precio Producto"  
                 name="precio"
                 value={precio}
+                onChange={onChangeFormulario}
+              />
+            </div>
+            <div className="form-group">
+              <label>Cantidad</label>
+              <input 
+                type="number"
+                className="form-control"
+                placeholder="Cantidad"  
+                name="cantidad"
+                value={cantidad}
                 onChange={onChangeFormulario}
               />
             </div>

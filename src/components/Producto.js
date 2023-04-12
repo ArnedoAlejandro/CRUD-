@@ -6,7 +6,7 @@ import { borrarProductoAction, obtenerProductoEditar } from "../actions/producto
 
 const Producto = ({producto}) => {
 
-    const { nombre, precio, id } = producto
+    const { nombre, precio,cantidad,total, id } = producto
 
     const dispatch = useDispatch()
     //Redireccion
@@ -39,9 +39,16 @@ const Producto = ({producto}) => {
 
   return (
     
-      <tr>
+      <tr className='text-center'>
         <td>{nombre}</td>
-        <td><span className="font-weight-bold">$ {precio}</span></td>
+      
+        {/* <td>{cantidad}</td> */}
+        <td><span className="font-weight-bold text-center">$ {precio}</span></td>
+        
+        <td ><span className="font-weight-bold text-center">{cantidad}</span></td>
+
+        <td><span className="font-weight-bold text-center ">${total}</span></td>
+
         <td className="acciones">
             <button
                 type='button'
@@ -54,6 +61,7 @@ const Producto = ({producto}) => {
                 Eliminar
             </button>
         </td>
+       
       </tr>
     
   )
